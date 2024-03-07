@@ -1,11 +1,23 @@
 const displayPosts = (posts) => {
     const postListElement = document.getElementById('post-data');
     postListElement.innerHTML = ''; 
-// PUNTO 2 
+// PUNTO 2
     posts.forEach((post) => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${post.title}`;
-        listItem.textContent = `${post.body}`;
+
+        // TITLE EN M¿NEGRITA
+        const titleElement = document.createElement('strong');
+        titleElement.textContent = post.title;
+        listItem.appendChild(titleElement);
+       
+        // BODY
+        const bodyElement = document.createElement('span');
+        bodyElement.textContent = post.body;
+        listItem.appendChild(bodyElement);
+        
+
+        
+        //SE JUNTAN AMBOS 
         postListElement.appendChild(listItem);
     });
 };
