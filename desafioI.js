@@ -5,11 +5,13 @@ const displayPosts = (posts) => {
     posts.forEach((post) => {
         const listItem = document.createElement('li');
 
-        // TITLE EN M¿NEGRITA
+        // TITLE EN NEGRITA
         const titleElement = document.createElement('strong');
         titleElement.textContent = post.title;
         listItem.appendChild(titleElement);
-       
+        //SALTO DE LINEA
+        listItem.appendChild(document.createElement('br'));
+
         // BODY
         const bodyElement = document.createElement('span');
         bodyElement.textContent = post.body;
